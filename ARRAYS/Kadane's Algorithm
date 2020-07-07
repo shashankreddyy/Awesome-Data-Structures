@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+
+// c is the current maximum
+// g is the global maximum
+
+int kadane(int a[],int n){
+    int c,g;
+    c=g=a[0];
+    for(int i=1;i<n;i++){
+        c=max(a[i],c+a[i]);
+        if(c>g){
+            g=c;
+        }
+    }
+    return g;
+}
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    int n;
+	    cin>>n;
+	    int a[n];
+	    for(int i=0;i<n;i++){
+	        cin>>a[i];
+	    }
+	   cout<<kadane(a,n)<<endl;
+	}
+	return 0;
+}
