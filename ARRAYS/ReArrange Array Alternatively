@@ -1,0 +1,42 @@
+In a sorted array, max element will come to forst position and min element will go to second position and so on like wise.
+
+#include <iostream>
+using namespace std;
+
+int alter(int arr[], int n){
+    long long i,j;
+    i=0;
+    j=n-1;
+    while(i<j){
+        cout<<arr[j]<<" "<<arr[i]<<" ";    
+        i++;
+        j--;
+    }
+    if(n%2!=0)
+	      cout<<arr[i];
+	    cout<<"\n";
+    
+    return 0;
+    
+}
+int main() {
+        int t;
+        cin>>t;
+        while(t--){
+            int n;
+            cin>>n;
+            int arr[n];
+            for(int i=0;i<n;i++){
+                cin>>arr[i];
+            }
+            alter(arr,n);
+        }
+	return 0;
+}
+
+
+
+
+
+
+
