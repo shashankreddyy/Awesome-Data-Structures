@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std; 
+
+int equi(int arr[], int n, int sum){
+
+    int leftSum=0;
+    for(int i=0;i<n;i++){
+        sum-=arr[i];
+        if(sum==leftSum){
+            return i+1;
+        }
+        leftSum+=arr[i];
+    }
+    return -1;
+}
+
+
+
+int main() 
+{   
+    int t;
+    cin>>t;
+    while(t--){
+    int n,sum=0;
+    cin>>n;
+	int arr[n];
+	for(int i=0;i<n;i++){
+        cin>>arr[i];
+        sum+=arr[i];
+	}
+	cout << equi(arr, n, sum)<<endl; 
+    }
+	return 0; 
+} 
