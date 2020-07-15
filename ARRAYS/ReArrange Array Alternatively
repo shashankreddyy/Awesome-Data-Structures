@@ -1,4 +1,4 @@
-In a sorted array, max element will come to forst position and min element will go to second position and so on like wise.
+In a sorted array, max element will come to first position and min element will go to second position and so on like wise.
 
 #include <iostream>
 using namespace std;
