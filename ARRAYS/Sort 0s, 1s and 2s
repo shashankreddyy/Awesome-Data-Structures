@@ -1,6 +1,7 @@
-Method 1 : 
+Method 1 :
+
 Just traverse the whole array and keep the count of 1s and 0s.
-print the array
+Print the array accordingly. 
 
 Method 2 : ( Efficient)
 
