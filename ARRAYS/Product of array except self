@@ -1,0 +1,51 @@
+Problem statement is to not use division, so we create 2 arrays, one as all the products to left, and the other is all the elements to right. Then product of two arrays is the required array
+INPUT 
+1 2 3 4
+
+Left array  : 1   1   2  6
+Right array : 24  12  4  1
+Product Array : 24 12 8 6 
+
+
+#include <iostream>
+using namespace std;
+
+// Cyrax OP
+
+int array(int arr[],int n){
+		
+		int r[n],l[n];
+		
+		l[0]=1;
+		r[n-1]=1;
+		
+		for(int i=1;i<n;i++){
+			l[i]=l[i-1]*arr[i-1];	
+		}
+		for(int i=n-2;i>=0;i--){
+			r[i]=r[i+1]*arr[i+1];
+		}
+		for(int i=0;i<n;i++){
+			arr[i]=l[i]*r[i];
+		}
+		for(int i=0;i<n-1;i++){
+    	 	cout<<arr[i]<<" ";
+	}
+	cout<<arr[n-1]<<endl;
+}
+
+int main()
+{	
+    int t;
+    cin>>t;
+    while(t--){
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+    	cin>>arr[i];
+	}
+	array(arr,n);
+    }
+	return 0;
+}
