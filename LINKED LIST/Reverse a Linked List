@@ -1,0 +1,23 @@
+Iterative Function 
+
+Node* reverse(Node* head){
+	Node* prev=NULL;
+	Node* next=NULL;
+	while(head!=NULL){
+		next=head->next;
+		head->next=prev;
+		prev=head;
+		head=next;
+	}
+	return prev;
+}
+
+Recurrsive Function
+
+Node* reverse(Node* head) { 
+       Node* rest = reverse(head->next); 
+       head->next->next = head; 
+       head->next = NULL; 
+       return rest; 
+ } 
+ 
