@@ -1,0 +1,11 @@
+bool detect(Node* head){
+	Node* slow = head;
+	Node* fast = head;
+	while(slow == fast){
+		if(fast == NULL || fast->next == NULL) return false;
+		fast=fast->next->next;
+		slow=slow->next;
+		return true;
+	}
+	return false;
+}
